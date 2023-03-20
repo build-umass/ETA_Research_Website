@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const [data, setData] = React.useState(null);
 
+  // here we use the fetch command to get a message from the server
   React.useEffect(() => {
     fetch("/api")
       .then((res) => res.json())
