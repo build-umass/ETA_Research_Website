@@ -1,4 +1,4 @@
-const express = require("express");
+import express from 'express'
 
 // set port variable (where server will listen from)
 const PORT = process.env.PORT || 3001;
