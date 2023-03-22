@@ -24,4 +24,4 @@ Install dependencies: `yarn install`
 Change directory into the frontend folder and run `yarn dev`. Any code you change should update immediately on the website
 
 ### Backend
-Change directory into backend folder and run `yarn start`
+Change directory into backend folder and run `yarn dev`
