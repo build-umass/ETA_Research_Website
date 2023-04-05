@@ -10,6 +10,9 @@ export default function Navbar() {
     );
 }
 
+/*
+    Component shows placeholder button, then when the user hovers over it the dropdown menu appears 
+*/
 function Dropdown({placeHolder, options}: {placeHolder: string, options: string[]}) {
     const [showDropdown, setShowDropdown] = useState(false);
     const buttonRef = useRef(null);
@@ -32,6 +35,9 @@ function Dropdown({placeHolder, options}: {placeHolder: string, options: string[
     );
 }
 
+/*
+    Component that will link to specified webpages
+*/
 function LinkButton({buttonText}) {
     return <button className="navlink">
         <a href="/">{buttonText}</a>
