@@ -12,12 +12,13 @@
 .dropdown-placeholder {
   background-color: inherit;
   color: white;
+  /* Don't want border for dropdown button that doesn't link anywhere */
+  border: 0;
 }
 
 .dropdown-placeholder:hover {
   /* Keep dropdown placeholder constant while hovering */
   background-color: #212721;
-  border: 0;
   color: white;
 }
 
