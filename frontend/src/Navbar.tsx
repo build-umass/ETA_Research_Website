@@ -1,5 +1,4 @@
 import {useState, useRef} from "react"
-import { onHoverOutside } from "./hooks/onHoverOutside";
 
 export default function Navbar() {
     return (
