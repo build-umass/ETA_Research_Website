@@ -28,7 +28,7 @@ function DropdownButton({placeHolder, options}: {placeHolder: string, options: s
 }
 
 function DropdownOption({text, link}) {
-    return <button>
-        <a href={link}>{text}</a>
-    </button>
+    return <a href={link}>
+        <button>{text}</button>
+    </a>
 }
