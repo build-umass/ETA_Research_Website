@@ -4,7 +4,7 @@ import { onHoverOutside } from "./hooks/onHoverOutside";
 export default function Navbar() {
     return (
         <div className="navbar">
-            <DropdownOption text={"Home"} link="/" />
+            <LinkButton text={"Home"} link="/" />
             <DropdownButton placeHolder={"Faculty"} options={["Person A", "Person B", "Person C"]} />
             <DropdownButton placeHolder={"Research"} options={["Paper 1", "Paper 2"]} />
         </div>
@@ -17,7 +17,7 @@ export default function Navbar() {
 */
 function DropdownButton({placeHolder, options}: {placeHolder: string, options: string[]}) {
     const dropdownContent = options.map((text, i) =>
-        <DropdownOption key={i} text={text} link="/" />
+        <LinkButton key={i} text={text} link="/" />
     );
     
     return <div className="dropdown">
@@ -28,7 +28,7 @@ function DropdownButton({placeHolder, options}: {placeHolder: string, options: s
     </div>
 }
 
-function DropdownOption({text, link}) {
+function LinkButton({text, link}) {
     return <a href={link}>
         <button className="dropdown-button">{text}</button>
     </a>
