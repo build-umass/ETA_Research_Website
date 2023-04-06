@@ -4,6 +4,7 @@ import { onHoverOutside } from "./hooks/onHoverOutside";
 export default function Navbar() {
     return (
         <div className="navbar">
+            <DropdownOption text={"Home"} link="/" />
             <DropdownButton placeHolder={"Faculty"} options={["Person A", "Person B", "Person C"]} />
             <DropdownButton placeHolder={"Research"} options={["Paper 1", "Paper 2"]} />
         </div>
@@ -29,6 +30,6 @@ function DropdownButton({placeHolder, options}: {placeHolder: string, options: s
 
 function DropdownOption({text, link}) {
     return <a href={link}>
-        <button>{text}</button>
+        <button className="dropdown-button">{text}</button>
     </a>
 }
