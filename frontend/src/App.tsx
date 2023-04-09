@@ -10,6 +10,7 @@ function App() {
     var userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
+    document.getElementById("signInDiv").hidden = true;
   }
 
   useEffect(() => {
