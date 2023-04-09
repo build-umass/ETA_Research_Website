@@ -36,7 +36,9 @@ function App() {
   return (
     <div className = "App">
       <div id= "signInDiv"></div>
-      <button onClick= {(e) => handleSignOut(e)}>Sign Out</button>
+      {Object.keys(user).length != 0 &&
+        <button onClick= {(e) => handleSignOut(e)}>Sign Out</button>
+      }
       {user &&
         <div>
           <img src = {user.picture}></img>
