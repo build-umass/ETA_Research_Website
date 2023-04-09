@@ -1,16 +1,17 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import jwt_decode from "jwt-decode";
 
-function handleCallbackResponse(response: { credential: string; }){
-  console.log("Encoded JWT ID Token: " + response.credential);
-  var userObject = jwt_decode(response.credential);
-  console.log(userObject);
-}
-
-
-
 function App() {
+  const [ user, setUser ] = useState({});
+
+  function handleCallbackResponse(response: { credential: string; }){
+    console.log("Encoded JWT ID Token: " + response.credential);
+    var userObject = jwt_decode(response.credential);
+    console.log(userObject);
+    setUser(userObject);
+  }
+
   useEffect(() => {
     /* global google */
 
@@ -29,6 +30,12 @@ function App() {
   return (
     <div className = "App">
       <div id= "signInDiv"></div>
+      {user &&
+        <div>
+          <img src = {user.picture}></img>
+          <h3>{user.name}</h3>
+        </div>
+      }
     </div>
   );
 }
