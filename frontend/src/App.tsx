@@ -13,6 +13,11 @@ function App() {
     document.getElementById("signInDiv").hidden = true;
   }
 
+  function handleSignOut(event){
+    setUser({});
+    document.getElementById("signInDiv").hidden = false;
+  }
+
   useEffect(() => {
     /* global google */
 
@@ -31,6 +36,7 @@ function App() {
   return (
     <div className = "App">
       <div id= "signInDiv"></div>
+      <button onClick= {(e) => handleSignOut(e)}></button>
       {user &&
         <div>
           <img src = {user.picture}></img>
