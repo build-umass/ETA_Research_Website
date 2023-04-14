@@ -37,11 +37,11 @@ function App() {
     <div className = "App">
       <div id= "signInDiv"></div>
       {Object.keys(user).length != 0 &&
-        <button onClick= {(e) => handleSignOut(e)}>Sign Out</button>
+        <button style={{marginBottom: 10 + 'px' }} onClick= {(e) => handleSignOut(e)}>Sign Out</button>
       }
       {user &&
         <div>
-          <img src = {user.picture}></img>
+          <img src = {user.picture} referrerPolicy="no-referrer"></img>
           <h3>{user.name}</h3>
         </div>
       }
