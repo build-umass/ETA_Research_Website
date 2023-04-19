@@ -7,9 +7,9 @@ const create = (req: Request, res: Response, next: NextFunction) => {
 
     const navBarheading = new NavBarTitle({
         _id: new mongoose.Types.ObjectId(),
-        category,
-        index,
-        parentCategory
+        category, // name of the heading
+        index, // decides ordering
+        parentCategory // if subHeading, it can list the name of the parent category from category
     });
 
     return navBarheading
