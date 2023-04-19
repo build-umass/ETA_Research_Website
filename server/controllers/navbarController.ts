@@ -69,6 +69,30 @@ const readByCategory = (req: Request, res: Response, next: NextFunction) => {
         });
 };
 
+const readAll = (req: Request, res: Response, next: NextFunction) => {
+    const category = req.params.category;
+
+    NavBarTitle.find()
+        .exec()
+        .then((titles) => {
+            if (titles) {
+                return res.status(200).json({
+                    count: titles.length,
+                    titles: titles
+                });
+            } else {
+                return res.status(404).json({
+                    error: 'Pages not found.'
+                });
+            }
+        })
+        .catch((error) => {
+            return res.status(500).json({
+                error: error.message
+            });
+        });
+};
+
 const edit = (req: Request, res: Response, next: NextFunction) => {
     const _id = req.params.pageID;
 
