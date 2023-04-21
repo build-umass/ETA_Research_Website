@@ -5,15 +5,23 @@ Install docker
 
 ## MongoDB
 
-Start MongoDB container
+Create volume. You should only need to run this once.
 ```
-docker run --name mongodb -d -p 27017:27017 -v $(pwd)/data:/data/db mongodb/mongodb-community-server
+docker volume create eta-mongo
+```
+
+Create MongoDB container. You should only need to run this once.
+```
+docker run --name mongodb -d -p 27017:27017 -v eta-mongo mongodb/mongodb-community-server
+```
+The MongoDB container should already be running. If it shuts down later, run
+```
+docker start mongodb
 ```
 
 Stop MongoDB container
 ```
 docker stop mongodb
-docker rm mongodb
 ```
 
 View logs
