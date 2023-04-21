@@ -11,3 +11,6 @@ const tabSchema = new Schema<ITab>({
 const Tab = model<ITab>('tab', tabSchema);
 
 export default Tab;
+export {
+  ITab
+}
