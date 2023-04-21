@@ -24,4 +24,5 @@ async function connect() {
   console.log('Connected to MongoDB');
 }
 
+mongoose.set('debug', true);
 connect().catch(err => console.log(err));
