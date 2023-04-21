@@ -8,7 +8,7 @@ interface IPage {
 
 const pageSchema = new Schema<IPage>({
   content: { type: String, required: true },
-  tab: Types.ObjectId
+  tab: { type: String, required: true }
 });
 
 const Page = model<IPage>('page', pageSchema);
