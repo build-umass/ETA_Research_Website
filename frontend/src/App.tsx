@@ -1,9 +1,18 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Navbar from './Navbar'
+import ResponsiveAppBar from './Navbar'
 
 function App() {
-  return <Navbar />
+  const fillText = (size: number) => {
+    const text = new Array(size)
+    return text.fill(<p>a</p>)
+  }
+  
+  return <div>
+    {ResponsiveAppBar()}
+    {fillText(100)}
+  </div>
+
 }
 
 export default App
