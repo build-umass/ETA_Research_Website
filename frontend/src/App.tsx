@@ -55,7 +55,12 @@ function App() {
 
     google.accounts.id.renderButton(
       document.getElementById("signInDiv"),
-      {theme: "outline", size: "small"}
+      {
+        theme: "outline", 
+        size: "small",
+        type: "icon",
+        shape: "square"
+      }
     );
 
   },[])
@@ -70,7 +75,7 @@ function App() {
       {user && isAuth == true &&
         <div>
           <img src = {user.picture} referrerPolicy="no-referrer"></img>
-          <h3>{user.name}</h3>
+          //<h3>{user.name}</h3>
         </div>
       }
     </div>
