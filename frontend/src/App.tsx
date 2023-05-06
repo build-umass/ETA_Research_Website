@@ -59,7 +59,9 @@ function App() {
         theme: "outline", 
         size: "small",
         type: "icon",
-        shape: "square"
+        shape: "square",
+        width: 400
+
       }
     );
 
@@ -74,7 +76,7 @@ function App() {
       {isAuth == false && <p>Unauthorized</p>}
       {user && isAuth == true &&
         <div>
-          <img src = {user.picture} referrerPolicy="no-referrer"></img>
+          //<img src = {user.picture} referrerPolicy="no-referrer"></img>
           //<h3>{user.name}</h3>
         </div>
       }
