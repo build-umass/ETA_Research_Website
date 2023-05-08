@@ -75,10 +75,12 @@ function App() {
       }
       {isAuth == false && <p>Unauthorized</p>}
       {user && isAuth == true &&
+      /**
         <div>
-          //<img src = {user.picture} referrerPolicy="no-referrer"></img>
-          //<h3>{user.name}</h3>
+          <img src = {user.picture} referrerPolicy="no-referrer"></img>
+          <h3>{user.name}</h3>
         </div>
+        **/
       }
     </div>
   );
