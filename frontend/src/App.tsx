@@ -77,8 +77,7 @@ function App() {
       {user && isAuth == true &&
 
         <div>
-          <img src = {user.picture} referrerPolicy="no-referrer"></img>
-          <h3>{user.name}</h3>
+          <h4>{user.name}</h4>
         </div>
 
       }
