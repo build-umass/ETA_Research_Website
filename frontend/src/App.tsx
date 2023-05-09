@@ -77,7 +77,7 @@ function App() {
       {user && isAuth == true &&
 
         <div>
-          <h4>{user.name}</h4>
+          <h6>{user.name}</h6>
         </div>
 
       }
