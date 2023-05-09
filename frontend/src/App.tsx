@@ -70,13 +70,13 @@ function App() {
     <div className = "App">
       <div id= "signInDiv"></div>
       {isAuth != null &&
-        <button style={{marginBottom: 10 + 'px'}} onClick= {(e) => handleSignOut(e)}>Sign Out</button>
+        <button style={{marginBottom: -10 + 'px'}} onClick= {(e) => handleSignOut(e)}>Sign Out</button>
       }
       {isAuth == false && <p>Unauthorized</p>}
       {user && isAuth == true &&
 
         <div>
-          <h5>{user.name}</h5>
+          <h5>{user.name} <style></style></h5>
         </div>
 
       }
