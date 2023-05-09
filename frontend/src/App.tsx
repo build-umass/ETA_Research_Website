@@ -55,12 +55,12 @@ function App() {
 
     google.accounts.id.renderButton(
       document.getElementById("signInDiv"),
-      {
-        theme: "outline", 
+      { 
         size: "small",
         type: "icon",
         shape: "square",
-        width: 400
+        width: 400,
+        theme: "filled_black"
 
       }
     );
