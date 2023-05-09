@@ -57,10 +57,9 @@ function App() {
       document.getElementById("signInDiv"),
       { 
         size: "small",
-        type: "icon",
+        type: "standard",
         shape: "square",
-        width: 400,
-        theme: "filled_black"
+        theme: "outline"
 
       }
     );
