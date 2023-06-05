@@ -13,8 +13,30 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = [['Home'], ['Faculty', 'Person Aasdjfbajsdfbajf', 'Person B'], ['Research', 'Paper 1', 'Paper 2', 'Paper 3']];
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+
+const pages = [['Home'], ['About'], ['Faculty', 'Person A', 'Person B'], ['Research', 'Paper 1', 'Paper 2', 'Paper 3']];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+function AboutPage() {
+  return (
+    <Grid container spacing={1}>
+      <Grid item xs={12} md={6}>
+        <Box sx={{ backgroundColor: 'grey.300', padding: 2 }}>
+          <Typography variant="h4" gutterBottom>
+            About the Lab
+          </Typography>
+          <Typography variant="body1">
+          Bridgette Davis is an assistant professor in the School of Public Policy. She also serves as a faculty affiliate in the Center for Equitable Family & Community Well-Being at the University of Michigan. Her research interests include anti-poverty policy and implementation, nonprofit organizations, social inequality, and administrative burdens.
+
+Her research focuses on how administrative burdens associated with need-based financial aid contribute to heterogeneous outcomes, social stratification, and cumulative disadvantage among first-generation and underrepresented racial minority college students. Davis conducts qualitative and mixed methods studies within nonprofit interventions to better understand the ways in which problems emerge and compound for multiply marginalized young people during the transition to adulthood. She has published in journals including Urban Education and Social Service Review. Her dissertation study, which was funded by the Hymen Milgrom Successful Pathways from School to Work Grant, has been noted in articles by the New Yorker, Politico, WBEZ Chicago, and the Chicago Sun-Times.
+          </Typography>
+        </Box>
+      </Grid>
+    </Grid>
+  );
+}
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -57,7 +79,7 @@ function ResponsiveAppBar() {
     */
     if (menuOptions.length == 1) {
         const pageText = menuOptions[0]
-        return <MenuItem key={pageText} onClick={handleCloseNavMenu}>
+        return <MenuItem component={Link} to={pageText == "About" ? "/about" : "/"} key={pageText} onClick={handleCloseNavMenu}>
           <Typography textAlign="center">{pageText}</Typography>
         </MenuItem>
     } else {
@@ -90,6 +112,7 @@ function ResponsiveAppBar() {
 
   
   return (
+    <Router>
     <AppBar position="sticky" color="primary">
       <Container maxWidth="xl">
         {/* Toolbar is how everything knows how to be formatted */}
@@ -173,7 +196,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"/>
               </IconButton>
             </Tooltip>
             <Menu
@@ -202,6 +225,12 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    <Routes>
+      <Route path="/about" element={AboutPage()} />
+    </Routes>
+    
+    </Router>
+    
   );
 }
 export default ResponsiveAppBar;
