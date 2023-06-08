@@ -39,3 +39,22 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  /* Take out transition out for now, because it causes bug where text appears twice */
+  /* transition: opacity 0.5s ease-in-out; */
+}
